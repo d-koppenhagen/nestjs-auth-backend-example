@@ -9,9 +9,11 @@ async function bootstrap() {
     .setTitle('Auth example')
     .setDescription('A simple authorization API using nestjs')
     .setVersion('1.0')
+    .addTag('api/v1')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('api', app, document);
+  SwaggerModule.setup('swagger-api', app, document);
 
   await app.listen(3000);
 }

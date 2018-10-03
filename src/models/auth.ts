@@ -2,11 +2,21 @@ import { ApiModelProperty } from '@nestjs/swagger';
 
 export class AuthDto {
   @ApiModelProperty()
-  readonly token: string;
+  token: string;
 
   @ApiModelProperty()
-  readonly tokenExpires: number;
+  tokenExpires: number;
 
   @ApiModelProperty()
-  readonly user: string;
+  email: string;
+
+  constructor(
+    token: string,
+    tokenExpires: number,
+    email: string,
+  ){
+    this.token = token;
+    this.tokenExpires = tokenExpires;
+    this.email = email;
+  }
 }
